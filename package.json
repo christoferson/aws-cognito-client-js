@@ -1,0 +1,25 @@
+{
+  "name": "aws-cognito-client",
+  "version": "1.0.0",
+  "description": "AWS Cognito Client in JavaScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/christoferson/aws-cognito-client-js.git"
+  },
+  "keywords": [
+    "aws",
+    "cognito",
+    "client",
+    "javascript"
+  ],
+  "author": "christoferson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/christoferson/aws-cognito-client-js/issues"
+  },
+  "homepage": "https://github.com/christoferson/aws-cognito-client-js#readme"
+}
