@@ -50,11 +50,13 @@ exports.cognitoSignIn = function () {
                 if (err) return console.error(err);
                 else console.log(AWS.config.credentials);
 
-                console.log(">>>> " + "Listing Bucket");
+                const cs3bucket = config.get('s3.bucket');
+                const cs3prefix = config.get('s3.prefix');
+                console.log(">>>> " + "Listing Bucket: " + cs3bucket + " " + cs3prefix);
 
                 var s3 = new AWS.S3({
                     apiVersion: '2006-03-01',
-                    params: { Bucket: 'b2b-dev-data', Key: 'eu-west-1:92b083b9-f409-456c-a570-fb865a7fb749' }
+                    params: { Bucket: cs3bucket, Key: cs3prefix }
                 });
 
                 s3.listObjects({ Delimiter: '/' }, function (err, data) {
