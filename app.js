@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 
 const mymodule = require('./modules/mymodule');
 const mycognito = require('./modules/mycognito');
+const mycognito2 = require('./modules/mycognito2');
 
 
 const app = express();
@@ -27,6 +28,8 @@ app.post('/cognito/login', function(req, res) {
     "Name": req.body.uname,
     "Password": req.body.upwd
   }
+    let cresult = mycognito2.cognitoSignIn(req.body.uname, req.body.upwd);
+    data.Auth = cresult;
     res.send('Got Parameters!' + mymodule.myDateTime() + " " + JSON.stringify(data));
 });
 
