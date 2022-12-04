@@ -1,4 +1,23 @@
 <html>
+    <head>
+        
+        <script type="text/javascript">
+
+            const userAction = async () => {
+                console.log("Calling");
+                document.getElementById("LoginInfo").innerHTML = "Fetching...";
+            const response = await fetch('http://localhost:3000/cognito/info');
+            //console.log(response.text());
+            //console.log(response.json());
+            const myJson = await response.json(); //extract JSON from the http response
+            // do something with myJson
+            console.log(myJson);
+            document.getElementById("LoginInfo").innerHTML = myJson.IdToken;
+            }
+
+        
+        </script>
+    </head>
     <body>
         <h1>Login</h1>
         <form action="/cognito/login" method="post">
@@ -6,5 +25,9 @@
             <div><label for="uname">Password:</label><input type="text" name="upwd" /></div>
             <div><input type="submit" /></div>
         </form>
+        <div>
+            <button onclick="userAction();">Refresh</button>
+            <div id="LoginInfo"></div>
+        </div>
     </body>
 </html>

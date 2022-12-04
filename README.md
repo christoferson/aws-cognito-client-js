@@ -1,6 +1,10 @@
 # aws-cognito-client-js
 AWS Cognito Client JS
 
+npm install express-session
+
+npm install cookie-parser
+
 
 npm i amazon-cognito-identity-js
 
@@ -40,5 +44,10 @@ config/default.json
 ### Run Application
 
 export NODE_ENV=production
+
 node app.js
+
+### Access Application
+
+localhost:3000/cognito/login
 
